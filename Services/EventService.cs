@@ -2,21 +2,23 @@ using EventsApi.Context;
 using EventsApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EventsApi.Services
 {
     public class EventService : IEventService
     {
-        private readonly EventsContext _context;
+        private readonly IEventRepository _eventRepository;
 
-        public EventService(EventsContext context)
+        public EventService(IEventRepository eventRepository)
         {
-            _context = context;
+            _eventRepository = eventRepository;
         }
 
         public async Task<List<Event>> GetEventsAsync()
         {
-            return await _context.Events.ToListAsync();
+            return await _eventRepository.GetEventsAsync();
         }
     }
 }

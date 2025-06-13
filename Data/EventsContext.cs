@@ -16,5 +16,6 @@ namespace EventsApi.Context
 
 
         public DbSet<Event> Events { get; set; }
+        public DbSet<Ticket> TicketSales { get; set; }
     }
 }

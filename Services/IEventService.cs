@@ -6,5 +6,6 @@ namespace EventsApi.Services
     public interface IEventService
     {
         public Task<List<Event>> GetEventsAsync();
+        
     }
 }

@@ -18,6 +18,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IEventService, EventService>();
+builder.Services.AddTransient<ITicketService, TicketService>();
+builder.Services.AddTransient<IEventRepository, EventRepository>();
 
 var app = builder.Build();
 
