@@ -5,7 +5,6 @@ namespace EventsApi.Services
 {
     public interface ITicketService
     {
-        public Task<List<Ticket>> GetTicketsByEventID(int eventId);
         public Task<List<Event>> GetTopFiveHighestSellingEventsAsync();
         public Task<List<Event>> GetTopFiveHighestCountEventsAsync();
     }

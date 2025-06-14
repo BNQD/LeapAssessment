@@ -16,11 +16,6 @@ namespace EventsApi.Services
             _eventRepository = eventRepository;
         }
 
-        public async Task<List<Ticket>> GetTicketsByEventID(int eventId)
-        {
-            return await _eventRepository.GetTicketsByEventID(eventId);
-        }
-
         public async Task<List<Event>> GetTopFiveHighestSellingEventsAsync()
         {
             return await _eventRepository.GetTopFiveHighestSellingEventsAsync();

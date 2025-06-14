@@ -18,14 +18,6 @@ public class EventRepository : IEventRepository
     {
         return await _context.Events.ToListAsync();
     }
-
-    public async Task<List<Ticket>> GetTicketsByEventID(int eventId)
-    {
-        return await _context.TicketSales
-            .Where(t => t.EventId == eventId.ToString())
-            .ToListAsync();
-    }
-
     public async Task<List<Event>> GetTopFiveHighestSellingEventsAsync()
     {
         var query = _context.TicketSales
